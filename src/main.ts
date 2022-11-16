@@ -1,12 +1,14 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 import './style.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
-// import "@/styles/theme/element-dark.scss"; custom darkmode
-// import "@/styles/element.scss"; custom element css
-import { createPinia } from 'pinia';
+import piniaPersist from 'pinia-plugin-persist';
 import router from './router';
 import App from './App.vue';
 
+const pinia = createPinia();
+pinia.use(piniaPersist);
+
 const app = createApp(App);
 
-app.use(router).use(createPinia()).mount('#app');
+app.use(router).use(pinia).mount('#app');

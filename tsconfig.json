@@ -1,19 +1,25 @@
 {
 	"compilerOptions": {
-		"target": "ESNext",
+		"target": "esnext",
 		"useDefineForClassFields": true,
-		"module": "ESNext",
-		"moduleResolution": "Node",
+		"module": "esnext",
+		"moduleResolution": "node",
 		"strict": true,
 		"jsx": "preserve",
 		"sourceMap": true,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
-		"lib": ["ESNext", "DOM"],
-		"types": ["element-plus/global", "vitest/globals"],
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"lib": ["esnext", "dom"],
+		"types": ["element-plus/global", "vitest/globals", "pinia-plugin-persist"],
+		"baseUrl": "./",
+		"paths": {
+			"@": ["src"],
+			"@/*": ["src/*"]
+		}
 	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
+	"exclude": ["node_modules", "dist", "**/*.js"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

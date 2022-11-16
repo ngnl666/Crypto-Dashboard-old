@@ -12,67 +12,57 @@ module.exports = {
 		messages: {
 			type: "Select the type of change that you're committing:",
 			scope: 'Denote the SCOPE of this change (optional):',
-			customScope: 'Denote the SCOPE of this change:',
 			subject: 'Write a SHORT, IMPERATIVE tense description of the change:\n',
 			body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
-			breaking: 'List any BREAKING CHANGES (optional). Use "|" to break new line:\n',
-			footerPrefixsSelect: 'Select the ISSUES type of changeList by this change (optional):',
-			customFooterPrefixs: 'Input ISSUES prefix:',
-			footer: 'List any ISSUES by this change. E.g.: #31, #34:\n',
 			confirmCommit: 'Are you sure you want to proceed with the commit above?',
 		},
-		questions: {
-			type: {
-				description: "Select the type of change that you're committing:",
-				enum: {
-					feat: {
-						description: 'A new feature',
-						title: 'Features',
-						emoji: '🚀',
-					},
-					fix: {
-						description: 'A bug fix',
-						title: 'Bug Fixes',
-						emoji: '🐛',
-					},
-					docs: {
-						description: 'Documentation only changes',
-						title: 'Documentation',
-						emoji: '📚',
-					},
-					style: {
-						description: 'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)',
-						title: 'Styles',
-						emoji: '🎨',
-					},
-					refactor: {
-						description: 'A code change that neither fixes a bug nor adds a feature',
-						title: 'Code Refactoring',
-						emoji: '🛠',
-					},
-					perf: {
-						description: 'A code change that improves performance',
-						title: 'Performance Improvements',
-						emoji: '⚡️',
-					},
-					test: {
-						description: 'Adding missing tests or correcting existing tests',
-						title: 'Tests',
-						emoji: '🚨',
-					},
-					build: {
-						description: 'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)',
-						title: 'Builds',
-						emoji: '📦',
-					},
-					chore: {
-						description: "Other changes that don't modify src or test files",
-						title: 'Chores',
-						emoji: '♻️',
-					},
-				},
+		types: [
+			{
+				value: 'feat',
+				name: 'feat:     🚀  A new feature',
+				emoji: '🚀',
 			},
-		},
+			{
+				value: 'fix',
+				name: 'fix:      🐛  A bug fix',
+				emoji: '🐛',
+			},
+			{
+				value: 'docs',
+				name: 'docs:     📚  Documentation only changes',
+				emoji: '📚',
+			},
+			{
+				value: 'style',
+				name: 'style:    🎨  Changes that do not affect the meaning of the code',
+				emoji: '🎨',
+			},
+			{
+				value: 'refactor',
+				name: 'refactor: 🛠   A code change that neither fixes a bug nor adds a feature',
+				emoji: '🛠',
+			},
+			{
+				value: 'perf',
+				name: 'perf:     ⚡️  A code change that improves performance',
+				emoji: '⚡️',
+			},
+			{
+				value: 'test',
+				name: 'test:     ✅  Adding missing tests or correcting existing tests',
+				emoji: '✅',
+			},
+			{
+				value: 'build',
+				name: 'build:    📦️   Changes that affect the build system or external dependencies',
+				emoji: '📦️',
+			},
+			{
+				value: 'chore',
+				name: "chore:    ♻️  Other changes that don't modify src or test files",
+				emoji: '♻️',
+			},
+		],
 		useEmoji: true,
 		themeColorCode: '',
 		scopes: [],
